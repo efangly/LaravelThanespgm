@@ -1,0 +1,10 @@
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^(www.)?thanespgm.com$
+RewriteCond %{REQUEST_URI} !^/thanespgm/public/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /thanespgm/public/$1
+RewriteCond %{HTTP_HOST} ^(www.)?thanespgm.com$
+RewriteRule ^(/)?$ thanespgm/public/index.php [L]
+
+Redirect 303 /Thanes_programmer/programmer/template/features.php http://thanespgm.com
